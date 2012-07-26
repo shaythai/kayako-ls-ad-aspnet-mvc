@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Test the LoginShare Authentication Controller</h2>
+<p>Use the below form to test your authentication settings.</p>
+@using(Html.BeginForm("Index", "Authenticate", FormMethod.Post)){
+<table>
+    <thead>
+        <tr>
+            <th>
+                Data Field
+            </th>
+            <th>
+                Input
+            </th>
+        </tr>
+    </thead>
+    <tr>
+        <td>
+            username
+        </td>
+        <td>
+        @Html.TextBox("username")
+        </td>
+    </tr>
+    <tr>
+        <td>
+            password
+        </td>
+        <td>
+        @Html.Password("password")
+        </td>
+    </tr>
+    <tr>
+        <td>
+            ipaddress
+        </td>
+        <td>
+        @Html.TextBox("ipaddress", @Request.UserHostAddress)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            interface
+        </td>
+        <td>
+        @Html.DropDownList("interface")
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+        <input type="submit" value="Test Authentication" />
+        </td>
+    </tr>
+</table>
+}
